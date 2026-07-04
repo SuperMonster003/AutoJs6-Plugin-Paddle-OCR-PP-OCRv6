@@ -55,7 +55,7 @@ android {
             buildConfigField("String", "MODEL_PROFILE", "\"tiny\"")
             resValue("string", "app_name", "Paddle OCR (PP-OCRv6 Tiny)")
             resValue("string", "plugin_id", "paddle-ocr-pp-ocrv6-tiny")
-            resValue("string", "model_profile", "tiny")
+            resValue("string", "model_profile", "Tiny")
         }
 
         create("small") {
@@ -66,7 +66,7 @@ android {
             buildConfigField("String", "MODEL_PROFILE", "\"small\"")
             resValue("string", "app_name", "Paddle OCR (PP-OCRv6 Small)")
             resValue("string", "plugin_id", "paddle-ocr-pp-ocrv6-small")
-            resValue("string", "model_profile", "small")
+            resValue("string", "model_profile", "Small")
         }
 
         create("medium") {
@@ -77,7 +77,7 @@ android {
             buildConfigField("String", "MODEL_PROFILE", "\"medium\"")
             resValue("string", "app_name", "Paddle OCR (PP-OCRv6 Medium)")
             resValue("string", "plugin_id", "paddle-ocr-pp-ocrv6-medium")
-            resValue("string", "model_profile", "medium")
+            resValue("string", "model_profile", "Medium")
         }
     }
 

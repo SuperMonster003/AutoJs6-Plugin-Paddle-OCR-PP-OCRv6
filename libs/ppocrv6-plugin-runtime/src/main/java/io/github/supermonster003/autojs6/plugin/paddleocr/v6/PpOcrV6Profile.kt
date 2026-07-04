@@ -8,21 +8,21 @@ enum class PpOcrV6Profile(
     val recommendedForMobileDefault: Boolean,
 ) {
     TINY(
-        value = "tiny",
+        value = "Tiny",
         detAssetPath = "models/ppocrv6-tiny/det/inference.onnx",
         recAssetPath = "models/ppocrv6-tiny/rec/inference.onnx",
         recConfigAssetPath = "models/ppocrv6-tiny/rec/inference.yml",
         recommendedForMobileDefault = false,
     ),
     SMALL(
-        value = "small",
+        value = "Small",
         detAssetPath = "models/ppocrv6-small/det/inference.onnx",
         recAssetPath = "models/ppocrv6-small/rec/inference.onnx",
         recConfigAssetPath = "models/ppocrv6-small/rec/inference.yml",
         recommendedForMobileDefault = true,
     ),
     MEDIUM(
-        value = "medium",
+        value = "Medium",
         detAssetPath = "models/ppocrv6-medium/det/inference.onnx",
         recAssetPath = "models/ppocrv6-medium/rec/inference.onnx",
         recConfigAssetPath = "models/ppocrv6-medium/rec/inference.yml",
