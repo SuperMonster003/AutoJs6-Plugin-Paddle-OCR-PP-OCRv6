@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="org.autojs.permission.PLUGIN" />
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <meta-data
+            android:name="org.autojs.plugin.WAKE_ACTIVITY"
+            android:value=".WakeActivity" />
+
+        <meta-data
+            android:name="org.autojs.plugin.info.AUTHOR"
+            android:value="SuperMonster003" />
+
+        <activity
+            android:name=".WakeActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:finishOnTaskLaunch="true"
+            android:permission="org.autojs.permission.PLUGIN"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="org.autojs.plugin.action.WAKE" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".PpOcrV6PluginService"
+            android:exported="true"
+            android:permission="org.autojs.permission.PLUGIN">
+            <intent-filter>
+                <action android:name="org.autojs.plugin.PADDLE_OCR" />
+                <category android:name="paddle-ocr" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
