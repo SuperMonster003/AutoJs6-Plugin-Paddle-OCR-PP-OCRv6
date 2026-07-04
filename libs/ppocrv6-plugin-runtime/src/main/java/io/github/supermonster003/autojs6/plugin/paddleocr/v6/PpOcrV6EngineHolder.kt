@@ -13,6 +13,7 @@ import org.autojs.plugin.paddle.ocr.api.OcrOptions
 class PpOcrV6EngineHolder(context: Context) {
 
     private val appContext = context.applicationContext
+    private val runtimeConfig = PpOcrV6RuntimeConfig.from(appContext)
     private val lock = Any()
 
     @Volatile
@@ -22,7 +23,7 @@ class PpOcrV6EngineHolder(context: Context) {
     private var cachedEngine: PaddleOCR? = null
 
     fun get(options: OcrOptions): PaddleOCR {
-        val profile = PpOcrV6Profile.fromBuildConfig()
+        val profile = PpOcrV6Profile.fromConfig(runtimeConfig)
         val extras = options.extras ?: Bundle().also { options.extras = it }
         val key = EngineKey(
             profile = profile,

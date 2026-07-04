@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.paddle.ocr"
+    namespace = "io.github.supermonster003.autojs6.plugin.paddleocr.v6.runtime"
     compileSdk = versions.sdkVersionCompile
 
     defaultConfig {
@@ -28,8 +28,10 @@ android {
 }
 
 dependencies {
-    implementation("com.microsoft.onnxruntime:onnxruntime-android:1.21.1")
-    implementation("com.quickbirdstudios:opencv:4.5.3")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.21")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
-    implementation(libs.core.ktx)
+
+    compileOnly(files("$rootDir/libs/common-plugin-api.aar"))
+    compileOnly(files("$rootDir/libs/paddle-ocr-api.aar"))
+    implementation(project(":libs:ppocr-android-sdk"))
 }

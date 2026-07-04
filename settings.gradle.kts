@@ -6,6 +6,7 @@ includeBuild("build-logic")
 
 private val libs = listOf(
     "ppocr-android-sdk",
+    "ppocrv6-plugin-runtime",
 )
 
 include(

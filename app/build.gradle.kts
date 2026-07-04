@@ -33,6 +33,10 @@ android {
         buildConfigField("String", "VERSION_DATE", "\"${utils.getDateString("MMM d, yyyy", "GMT+08:00")}\"")
         buildConfigField("String", "PLUGIN_ENGINE", "\"paddle-ocr\"")
         buildConfigField("String", "PLUGIN_VARIANT", "\"v6\"")
+        resValue("string", "plugin_author", "SuperMonster003")
+        resValue("string", "plugin_engine", "paddle-ocr")
+        resValue("string", "plugin_variant", "v6")
+        resValue("string", "plugin_version_date", utils.getDateString("MMM d, yyyy", "GMT+08:00"))
 
         ndk {
             abiFilters += listOf("arm64-v8a", "armeabi-v7a")
@@ -49,6 +53,8 @@ android {
             buildConfigField("String", "PLUGIN_ID", "\"paddle-ocr-pp-ocrv6-tiny\"")
             buildConfigField("String", "MODEL_PROFILE", "\"tiny\"")
             resValue("string", "app_name", "Paddle OCR (PP-OCRv6 Tiny)")
+            resValue("string", "plugin_id", "paddle-ocr-pp-ocrv6-tiny")
+            resValue("string", "model_profile", "tiny")
         }
 
         create("small") {
@@ -58,6 +64,8 @@ android {
             buildConfigField("String", "PLUGIN_ID", "\"paddle-ocr-pp-ocrv6-small\"")
             buildConfigField("String", "MODEL_PROFILE", "\"small\"")
             resValue("string", "app_name", "Paddle OCR (PP-OCRv6 Small)")
+            resValue("string", "plugin_id", "paddle-ocr-pp-ocrv6-small")
+            resValue("string", "model_profile", "small")
         }
 
         create("medium") {
@@ -67,6 +75,8 @@ android {
             buildConfigField("String", "PLUGIN_ID", "\"paddle-ocr-pp-ocrv6-medium\"")
             buildConfigField("String", "MODEL_PROFILE", "\"medium\"")
             resValue("string", "app_name", "Paddle OCR (PP-OCRv6 Medium)")
+            resValue("string", "plugin_id", "paddle-ocr-pp-ocrv6-medium")
+            resValue("string", "model_profile", "medium")
         }
     }
 
@@ -111,6 +121,10 @@ android {
         resValues = true
     }
 
+    sourceSets.named("main") {
+        kotlin.directories += "src/main/java"
+    }
+
     @Suppress("DEPRECATION")
     packagingOptions {
         jniLibs.useLegacyPackaging = true
@@ -135,6 +149,18 @@ android {
             reset()
             include("arm64-v8a", "armeabi-v7a")
             isUniversalApk = true
+        }
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = false
         }
     }
 }
@@ -163,11 +189,13 @@ androidComponents {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.21")
+    implementation("org.jetbrains.kotlin:kotlin-parcelize-runtime:2.2.21")
     implementation("org.jetbrains:annotations:26.0.2")
 
     implementation(files("$rootDir/libs/common-plugin-api.aar"))
     implementation(files("$rootDir/libs/paddle-ocr-api.aar"))
 
+    implementation(project(":libs:ppocrv6-plugin-runtime"))
     implementation(project(":libs:ppocr-android-sdk"))
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")

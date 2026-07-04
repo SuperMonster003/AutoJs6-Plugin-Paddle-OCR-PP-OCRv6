@@ -36,7 +36,8 @@ class PpOcrV6PluginService : Service() {
 
     private val binder = object : IOcrPlugin.Stub() {
         override fun getInfo(): PluginInfo {
-            val profile = PpOcrV6Profile.fromBuildConfig()
+            val runtimeConfig = PpOcrV6RuntimeConfig.from(this@PpOcrV6PluginService)
+            val profile = PpOcrV6Profile.fromConfig(runtimeConfig)
             return PluginInfo().apply {
                 name = "Paddle OCR (PP-OCRv6 ${profile.value})"
                 description = when (profile) {
@@ -44,13 +45,13 @@ class PpOcrV6PluginService : Service() {
                     PpOcrV6Profile.SMALL -> "PP-OCRv6 small profile, recommended for most Android devices."
                     PpOcrV6Profile.MEDIUM -> "PP-OCRv6 medium profile for high-accuracy OCR on high-end devices."
                 }
-                author = "SuperMonster003"
-                id = BuildConfig.PLUGIN_ID
-                engine = BuildConfig.PLUGIN_ENGINE
-                variant = BuildConfig.PLUGIN_VARIANT
-                versionName = BuildConfig.VERSION_NAME
-                versionCode = BuildConfig.VERSION_CODE.toLong()
-                versionDate = BuildConfig.VERSION_DATE
+                author = runtimeConfig.pluginAuthor
+                id = runtimeConfig.pluginId
+                engine = runtimeConfig.pluginEngine
+                variant = runtimeConfig.pluginVariant
+                versionName = runtimeConfig.versionName
+                versionCode = runtimeConfig.versionCode
+                versionDate = runtimeConfig.versionDate
                 supportedAbis = SUPPORTED_ABIS
                 capabilities = Bundle().apply {
                     putInt(PluginCapabilityKeys.REQUIRES_HOST_VERSION, 3835)

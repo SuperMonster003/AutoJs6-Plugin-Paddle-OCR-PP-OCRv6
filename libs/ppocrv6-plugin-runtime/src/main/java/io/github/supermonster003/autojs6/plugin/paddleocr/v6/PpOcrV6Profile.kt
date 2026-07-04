@@ -30,8 +30,8 @@ enum class PpOcrV6Profile(
     );
 
     companion object {
-        fun fromBuildConfig(): PpOcrV6Profile {
-            return values().firstOrNull { it.value == BuildConfig.MODEL_PROFILE } ?: SMALL
+        internal fun fromConfig(config: PpOcrV6RuntimeConfig): PpOcrV6Profile {
+            return values().firstOrNull { it.value == config.modelProfile } ?: SMALL
         }
     }
 }
