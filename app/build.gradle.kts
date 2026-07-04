@@ -113,7 +113,7 @@ android {
 
     @Suppress("DEPRECATION")
     packagingOptions {
-        jniLibs.useLegacyPackaging = false
+        jniLibs.useLegacyPackaging = true
 
         listOf(
             "META-INF/DEPENDENCIES",

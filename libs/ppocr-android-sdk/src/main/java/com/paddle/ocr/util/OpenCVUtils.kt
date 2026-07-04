@@ -16,19 +16,73 @@ package com.paddle.ocr.util
 
 import android.content.Context
 import android.util.Log
+import java.io.File
 
 object OpenCVUtils {
 
+    private const val TAG = "OpenCVUtils"
+
+    @Volatile
     private var initialized = false
+
+    @Volatile
+    var lastError: String? = null
+        private set
 
     fun init(context: Context): Boolean {
         if (initialized) return true
-        try {
-            System.loadLibrary("opencv_java4")
-            initialized = true
-        } catch (e: UnsatisfiedLinkError) {
-            Log.e("OpenCVUtils", "Failed to initialize OpenCV: ${e.message}")
+        synchronized(this) {
+            if (initialized) return true
+            val failures = mutableListOf<String>()
+            if (tryLoadWithSystemLoader(failures) || tryLoadFromNativeLibraryDir(context, failures)) {
+                initialized = true
+                lastError = null
+                return true
+            }
+            lastError = failures.joinToString(separator = " | ")
+            Log.e(TAG, "Failed to initialize OpenCV: $lastError")
+            return false
         }
-        return initialized
+    }
+
+    private fun tryLoadWithSystemLoader(failures: MutableList<String>): Boolean {
+        return try {
+            loadLibraryIfPresent("c++_shared")
+            System.loadLibrary("opencv_java4")
+            true
+        } catch (e: UnsatisfiedLinkError) {
+            failures += "System.loadLibrary(opencv_java4): ${e.message}"
+            false
+        }
+    }
+
+    private fun tryLoadFromNativeLibraryDir(context: Context, failures: MutableList<String>): Boolean {
+        val nativeLibraryDir = context.applicationInfo.nativeLibraryDir
+        if (nativeLibraryDir.isNullOrBlank()) {
+            failures += "nativeLibraryDir is blank"
+            return false
+        }
+        return try {
+            loadFileIfExists(File(nativeLibraryDir, "libc++_shared.so"))
+            System.load(File(nativeLibraryDir, "libopencv_java4.so").absolutePath)
+            true
+        } catch (e: UnsatisfiedLinkError) {
+            failures += "System.load(nativeLibraryDir/libopencv_java4.so): ${e.message}"
+            false
+        }
+    }
+
+    private fun loadLibraryIfPresent(name: String) {
+        try {
+            System.loadLibrary(name)
+        } catch (_: UnsatisfiedLinkError) {
+            // OpenCV may still load if the dependency is resolved by the platform linker.
+        }
+    }
+
+    private fun loadFileIfExists(file: File) {
+        if (file.isFile) {
+            System.load(file.absolutePath)
+        }
     }
 }

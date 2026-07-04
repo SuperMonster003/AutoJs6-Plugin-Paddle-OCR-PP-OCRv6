@@ -50,7 +50,7 @@ class PpOcrV6EngineHolder(context: Context) {
             val created = runBlocking(Dispatchers.IO) {
                 old?.release()
                 check(OpenCVUtils.init(appContext)) {
-                    "Failed to initialize OpenCV for Paddle OCR PP-OCRv6"
+                    "Failed to initialize OpenCV for Paddle OCR PP-OCRv6: ${OpenCVUtils.lastError.orEmpty()}"
                 }
                 PaddleOCR.create(
                     context = appContext,
