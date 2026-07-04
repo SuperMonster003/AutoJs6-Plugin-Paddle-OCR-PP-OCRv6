@@ -26,6 +26,14 @@ Build:
 ./gradlew :app:assembleMediumDebug
 ```
 
+Install:
+
+```bash
+./gradlew :app:installSmallDebug
+./gradlew :app:installTinyDebug
+./gradlew :app:installMediumDebug
+```
+
 If you only have Paddle static inference tar files, pass them as a local source and keep PaddleX's `paddle2onnx` plugin available:
 
 ```bash
