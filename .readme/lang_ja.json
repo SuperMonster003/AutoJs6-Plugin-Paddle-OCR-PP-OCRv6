@@ -1,0 +1,43 @@
+{
+  "$name": "日本語",
+  "text_current_lowercase": "現在",
+  "text_plugin_synopsis": "ローカル OCR 用 Paddle OCR PP-OCRv6 プラグイン",
+  "h3_languages_with_ascii": "言語 (Languages)",
+  "p_languages_all_supported_for_readme": "現在の README.md は次の言語に対応しています",
+  "h3_introduction": "概要",
+  "p_introduction": "AutoJs6 Paddle OCR PP-OCRv6 プラグインは, Paddle OCR PP-OCRv6 によるローカル文字検出と認識を AutoJs6 に提供します. Tiny, Small, Medium のモデルプロファイルごとに個別の APK をビルドします.",
+  "h3_functions": "機能",
+  "features": [
+    "プラグイン ID `{{ plugin_ids }}`, エンジン `{{ plugin_engine }}`, バリアント `{{ plugin_variant }}` の共有 OCR プラグインサービスを提供します.",
+    "`{{ plugin_action }}` 経由で OCR AIDL インターフェイスを公開し, AutoJs6 ホストの OCR プラグイン検出フローに対応します.",
+    "`recognizeText` はテキスト行リストを返し, `detect` はテキスト, 信頼度, 行境界, 四点座標, 時間メタデータを返します.",
+    "エンコード画像入力と raw `ARGB_8888` 画像バッファ入力に対応します.",
+    "`small` は Android 推奨デフォルト, `tiny` は低性能端末と最速ローカル OCR 向け, `medium` は高精度 OCR 向けです.",
+    "`scripts/prepare_ppocrv6_assets.py` で PP-OCRv6 モデルアセットを準備し, 各プロファイルを個別の flavor assets ディレクトリに配置します.",
+    "プラグインメタデータ, 使用説明, README, CHANGELOG はスペイン語/フランス語/ロシア語/アラビア語/日本語/韓国語/英語/簡体字中国語/香港繁体字/台湾繁体字にローカライズされています.",
+    "`com.microsoft.onnxruntime:onnxruntime-android` と OpenCV 4.8.0 を基盤にしています."
+  ],
+  "h3_model_profiles": "モデルプロファイル",
+  "profile_lines": [
+    "tiny: 低性能端末と最速ローカル OCR",
+    "small: Android 推奨デフォルト",
+    "medium: 大きいモデルアセットを使う高精度 OCR"
+  ],
+  "p_model_profiles": "各プロファイルは個別の product flavor としてパッケージされ, APK には選択されたモデルアセットのみが含まれます",
+  "h3_plugin_interface": "プラグインインターフェイス",
+  "p_plugin_interface": "ホストは次の識別情報でプラグインを検出して呼び出せます",
+  "p_result_shape": "`recognizeText` は文字列リストを返します; `detect` は `text`, `confidence`, `bounds`, `quad`, `detectionTimeMs`, `recognitionTimeMs`, `totalTimeMs`, `coldLoadTimeMs` を含む OCR 結果オブジェクトを返します.",
+  "h3_model_assets": "モデルアセット",
+  "p_model_assets": "スクリプトは公式 PP-OCRv6 ONNX アセットをダウンロードします. `--source-dir` が指定された場合はローカル Paddle 静的モデルアーカイブを変換します. デフォルトでは `app/src/<profile>/assets` に書き込みます",
+  "h3_release_history": "リリース履歴",
+  "h5_for_more_release_history": "その他のリリース履歴",
+  "h3_build": "ビルド",
+  "text_release_build": "Release ビルド",
+  "p_build_params": "ビルドパラメータは `version.properties` から取得されます. app の最小 SDK は 26, ターゲット SDK は 36 です",
+  "h3_resource_layout": "リソース構成",
+  "p_resource_layout": "`strings.xml` にはローカライズされたプラグイン説明が含まれます; `plugin_instruction.md` にはホスト側で表示される使用説明が含まれます. README と CHANGELOG は `.python/generate_markdown.py` により JSON ソースから生成されます",
+  "h3_links": "リンク",
+  "text_link_autojs6_docs": "AutoJs6 ドキュメント",
+  "text_link_paddleocr_official": "PaddleOCR 公式プロジェクト",
+  "text_link_paddlex_official": "PaddleX 公式プロジェクト"
+}

@@ -1,0 +1,43 @@
+{
+  "$name": "简体中文",
+  "text_current_lowercase": "当前",
+  "text_plugin_synopsis": "用于本地 OCR 的 Paddle OCR PP-OCRv6 插件",
+  "h3_languages_with_ascii": "语言 (Languages)",
+  "p_languages_all_supported_for_readme": "当前 README.md 支持以下语言",
+  "h3_introduction": "简介",
+  "p_introduction": "AutoJs6 Paddle OCR PP-OCRv6 插件为 AutoJs6 提供基于 Paddle OCR PP-OCRv6 的本地文字检测和识别能力, 可按 Tiny, Small, Medium 三个模型档位构建独立 APK.",
+  "h3_functions": "功能",
+  "features": [
+    "提供共享 OCR 插件服务, 插件 ID 为 `{{ plugin_ids }}`, 引擎为 `{{ plugin_engine }}`, 变体为 `{{ plugin_variant }}`.",
+    "通过 `{{ plugin_action }}` 暴露 OCR AIDL 接口, 兼容 AutoJs6 宿主侧 OCR 插件发现机制.",
+    "支持 `recognizeText` 返回文本行列表, 支持 `detect` 返回文本, 置信度, 文本行边界框, 四点坐标和耗时信息.",
+    "支持编码图片输入和 `ARGB_8888` 原始图片缓冲区输入.",
+    "`small` 为 Android 推荐默认档, `tiny` 面向低端设备和最快本地 OCR, `medium` 面向高精度 OCR.",
+    "提供 `scripts/prepare_ppocrv6_assets.py` 准备 PP-OCRv6 模型资产, 并按 flavor 放入独立 assets 目录.",
+    "插件信息, 使用说明, README 与 CHANGELOG 均支持西班牙语/法语/俄语/阿拉伯语/日语/韩语/英语/简体中文/香港繁体/台湾繁体.",
+    "基于 `com.microsoft.onnxruntime:onnxruntime-android` 和 OpenCV 4.8.0."
+  ],
+  "h3_model_profiles": "模型档位",
+  "profile_lines": [
+    "tiny: 面向低端设备和最快本地 OCR",
+    "small: Android 推荐默认档",
+    "medium: 使用更大模型资产的高精度 OCR"
+  ],
+  "p_model_profiles": "每个档位都作为独立 product flavor 打包, APK 只包含对应模型资产",
+  "h3_plugin_interface": "插件接口",
+  "p_plugin_interface": "宿主可通过以下身份发现并调用插件",
+  "p_result_shape": "`recognizeText` 返回字符串列表; `detect` 返回 OCR 结果列表, 每项包含 `text`, `confidence`, `bounds`, `quad`, `detectionTimeMs`, `recognitionTimeMs`, `totalTimeMs` 和 `coldLoadTimeMs`.",
+  "h3_model_assets": "模型资产",
+  "p_model_assets": "脚本会下载官方 PP-OCRv6 ONNX 资产, 或在提供 `--source-dir` 时转换本地 Paddle 静态模型归档. 默认写入 `app/src/<profile>/assets`",
+  "h3_release_history": "发行历史",
+  "h5_for_more_release_history": "更多发行历史可参阅",
+  "h3_build": "构建",
+  "text_release_build": "Release 构建",
+  "p_build_params": "构建参数来自 `version.properties`, app 最低 SDK 为 26, 目标 SDK 为 36",
+  "h3_resource_layout": "资源结构",
+  "p_resource_layout": "`strings.xml` 提供插件描述本地化; `plugin_instruction.md` 提供宿主侧展示的插件使用说明. README 与 CHANGELOG 由 `.python/generate_markdown.py` 根据 JSON 源文件生成",
+  "h3_links": "相关链接",
+  "text_link_autojs6_docs": "AutoJs6 文档",
+  "text_link_paddleocr_official": "PaddleOCR 官方项目",
+  "text_link_paddlex_official": "PaddleX 官方项目"
+}

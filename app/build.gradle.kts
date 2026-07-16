@@ -1,4 +1,6 @@
 import com.android.build.api.variant.FilterConfiguration
+import org.gradle.api.file.DuplicatesStrategy
+import org.gradle.api.file.RelativePath
 import org.gradle.api.provider.Property
 
 plugins {
@@ -207,24 +209,28 @@ tasks {
         options.encoding = "UTF-8"
     }
 
-    register<Copy>("appendDigestToReleasedFiles") {
-        val src = buildTypeRelease
-        val dst = "${src}s"
+    register<Sync>("appendDigestToReleasedFiles") {
         val ext = utils.FILE_EXTENSION_APK
+        val src = fileTree(projectDir) {
+            include(
+                "$buildTypeRelease/*.$ext",
+                "*/$buildTypeRelease/*.$ext",
+            )
+        }
+        val dst = file("${buildTypeRelease}s")
 
-        if (!file(src).isDirectory) {
-            return@register
+        from(src)
+        into(dst)
+        includeEmptyDirs = false
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+
+        eachFile {
+            val digest = utils.digestCRC32(file)
+            val digestedName = "${name.removeSuffix(".$ext")}-$digest.$ext"
+            relativePath = RelativePath(true, digestedName)
         }
 
-        from(src); into(dst); include("*.$ext")
-
-        rename { name ->
-            utils.digestCRC32(file("${src}/$name")).let { digest ->
-                name.replace(Regex("^(.+?)(\\.$ext)$"), "$1-$digest$2")
-            }
-        }
-
-        doLast { println("Destination: ${file(dst)}") }
+        doLast { println("Destination: $dst") }
     }
 }
 

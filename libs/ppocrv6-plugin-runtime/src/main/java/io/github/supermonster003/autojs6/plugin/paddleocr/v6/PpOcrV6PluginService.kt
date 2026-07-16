@@ -39,12 +39,8 @@ class PpOcrV6PluginService : Service() {
             val runtimeConfig = PpOcrV6RuntimeConfig.from(this@PpOcrV6PluginService)
             val profile = PpOcrV6Profile.fromConfig(runtimeConfig)
             return PluginInfo().apply {
-                name = "Paddle OCR (PP-OCRv6 ${profile.value})"
-                description = when (profile) {
-                    PpOcrV6Profile.TINY -> "PP-OCRv6 tiny profile for low-end devices and fast OCR."
-                    PpOcrV6Profile.SMALL -> "PP-OCRv6 small profile, recommended for most Android devices."
-                    PpOcrV6Profile.MEDIUM -> "PP-OCRv6 medium profile for high-accuracy OCR on high-end devices."
-                }
+                name = runtimeConfig.pluginName
+                description = runtimeConfig.pluginDescription
                 author = runtimeConfig.pluginAuthor
                 id = runtimeConfig.pluginId
                 engine = runtimeConfig.pluginEngine

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="plugin_description">基於 Paddle OCR PP-OCRv6 的本地 OCR 插件</string>
+</resources>

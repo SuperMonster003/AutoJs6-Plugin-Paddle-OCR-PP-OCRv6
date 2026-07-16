@@ -32,8 +32,8 @@ sync.ffs_db
 /libs/**/build/
 /.cache/
 /app/src/*/assets/models/
-/app/release/
-/app/releases/
+/app/**/release/
+/app/**/releases/
 
 /local.properties
 /sign.properties

@@ -1,0 +1,43 @@
+{
+  "$name": "Русский",
+  "text_current_lowercase": "текущий",
+  "text_plugin_synopsis": "Плагин Paddle OCR PP-OCRv6 для локального OCR",
+  "h3_languages_with_ascii": "Языки (Languages)",
+  "p_languages_all_supported_for_readme": "Текущий README.md поддерживает следующие языки",
+  "h3_introduction": "Введение",
+  "p_introduction": "Плагин AutoJs6 Paddle OCR PP-OCRv6 предоставляет AutoJs6 локальное обнаружение и распознавание текста на основе Paddle OCR PP-OCRv6. Он собирает отдельные APK для профилей моделей Tiny, Small и Medium.",
+  "h3_functions": "Функции",
+  "features": [
+    "Предоставляет общий сервис OCR-плагина с ID плагинов `{{ plugin_ids }}`, движком `{{ plugin_engine }}` и вариантом `{{ plugin_variant }}`.",
+    "Открывает OCR AIDL интерфейс через `{{ plugin_action }}` и совместим с механизмом обнаружения OCR-плагинов хостом AutoJs6.",
+    "Поддерживает `recognizeText` для списка строк текста и `detect` для текста, уверенности, границ строк, четырехугольных координат и временных метаданных.",
+    "Поддерживает ввод кодированных изображений и необработанных буферов изображений `ARGB_8888`.",
+    "`small` является рекомендуемым профилем по умолчанию для Android, `tiny` предназначен для слабых устройств и самого быстрого локального OCR, а `medium` предназначен для более точного OCR.",
+    "Предоставляет `scripts/prepare_ppocrv6_assets.py` для подготовки модельных assets PP-OCRv6 и размещения каждого профиля в отдельном каталоге assets flavor.",
+    "Метаданные плагина, инструкции, README и CHANGELOG локализованы на испанский, французский, русский, арабский, японский, корейский, английский, упрощенный китайский, гонконгский традиционный китайский и тайваньский традиционный китайский.",
+    "Основан на `com.microsoft.onnxruntime:onnxruntime-android` и OpenCV 4.8.0."
+  ],
+  "h3_model_profiles": "Профили Моделей",
+  "profile_lines": [
+    "tiny: слабые устройства и самый быстрый локальный OCR",
+    "small: рекомендуемый профиль Android по умолчанию",
+    "medium: высокоточный OCR с более крупными модельными assets"
+  ],
+  "p_model_profiles": "Каждый профиль упакован как отдельный product flavor, поэтому APK содержит только выбранные модельные assets",
+  "h3_plugin_interface": "Интерфейс Плагина",
+  "p_plugin_interface": "Хост может обнаружить и вызвать плагин со следующими идентификаторами",
+  "p_result_shape": "`recognizeText` возвращает список строк; `detect` возвращает объекты результата OCR, содержащие `text`, `confidence`, `bounds`, `quad`, `detectionTimeMs`, `recognitionTimeMs`, `totalTimeMs` и `coldLoadTimeMs`.",
+  "h3_model_assets": "Модельные Assets",
+  "p_model_assets": "Скрипт загружает официальные ONNX assets PP-OCRv6 или преобразует локальные архивы статических моделей Paddle, если указан `--source-dir`. По умолчанию assets записываются в `app/src/<profile>/assets`",
+  "h3_release_history": "История Выпусков",
+  "h5_for_more_release_history": "Больше истории выпусков",
+  "h3_build": "Сборка",
+  "text_release_build": "Release-сборка",
+  "p_build_params": "Параметры сборки берутся из `version.properties`; минимальный SDK app равен 26, целевой SDK равен 36",
+  "h3_resource_layout": "Структура Ресурсов",
+  "p_resource_layout": "`strings.xml` содержит локализованные описания плагина; `plugin_instruction.md` содержит инструкции, отображаемые хостом. README и CHANGELOG генерируются из JSON-источников с помощью `.python/generate_markdown.py`",
+  "h3_links": "Ссылки",
+  "text_link_autojs6_docs": "Документация AutoJs6",
+  "text_link_paddleocr_official": "Официальный проект PaddleOCR",
+  "text_link_paddlex_official": "Официальный проект PaddleX"
+}

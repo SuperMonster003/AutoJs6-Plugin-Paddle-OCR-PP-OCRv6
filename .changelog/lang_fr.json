@@ -1,0 +1,24 @@
+{
+  "changelog_label_hint": "Note",
+  "changelog_label_feature": "Fonctionnalité",
+  "changelog_label_fix": "Correctif",
+  "changelog_label_improvement": "Amélioration",
+  "changelog_label_dependency": "Dépendance",
+  "$data": {
+    "v1.0.0": {
+      "released_date": "2026/07/17",
+      "feature": [
+        "Ajout du service de plugin Paddle OCR PP-OCRv6 avec les ID de plugin `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small` et `paddle-ocr-pp-ocrv6-medium`, le moteur `paddle-ocr` et la variante `v6`",
+        "Ajout de la decouverte et de l'appel par l'hote via l'action OCR AIDL partagee `org.autojs.plugin.PADDLE_OCR`",
+        "Ajout des interfaces `recognizeText` et `detect`, qui renvoient le texte reconnu, les valeurs de confiance, les limites de ligne, les coordonnees quadrilaterales et les temps de detection/reconnaissance",
+        "Ajout des profils de modele Tiny, Small et Medium, avec `small` comme profil Android recommande par defaut",
+        "Ajout de la prise en charge des images encodees et des tampons d'image bruts `ARGB_8888`",
+        "Ajout du script de preparation des assets de modele PP-OCRv6, avec telechargements ONNX officiels et conversion de modeles statiques Paddle locaux via `--source-dir`",
+        "Ajout des metadonnees de plugin et des instructions localisees en espagnol, francais, russe, arabe, japonais, coreen, anglais, chinois simplifie, chinois traditionnel de Hong Kong et chinois traditionnel de Taiwan",
+        "Ajout des sources JSON et du flux de generation `.python/generate_markdown.py` pour README et CHANGELOG",
+        "Ajout de builds APK divises par ABI pour `arm64-v8a`, `armeabi-v7a` et un APK `universal`",
+        "Les noms des APK de release incluent la version, le flavor, la variante ABI et le resume CRC32 optionnel de la tache d'archivage release"
+      ]
+    }
+  }
+}

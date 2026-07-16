@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Build
 
 internal class PpOcrV6RuntimeConfig private constructor(
+    val pluginName: String,
+    val pluginDescription: String,
     val pluginId: String,
     val pluginEngine: String,
     val pluginVariant: String,
@@ -18,6 +20,11 @@ internal class PpOcrV6RuntimeConfig private constructor(
             val appContext = context.applicationContext
             val packageInfo = appContext.packageManager.getPackageInfo(appContext.packageName, 0)
             return PpOcrV6RuntimeConfig(
+                pluginName = appContext.stringResource("app_name", "Paddle OCR (PP-OCRv6 Small)"),
+                pluginDescription = appContext.stringResource(
+                    "plugin_description",
+                    "Local OCR plugin powered by Paddle OCR PP-OCRv6",
+                ),
                 pluginId = appContext.stringResource("plugin_id", "paddle-ocr-pp-ocrv6-small"),
                 pluginEngine = appContext.stringResource("plugin_engine", "paddle-ocr"),
                 pluginVariant = appContext.stringResource("plugin_variant", "v6"),

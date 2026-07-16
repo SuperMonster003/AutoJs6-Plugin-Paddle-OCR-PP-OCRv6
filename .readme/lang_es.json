@@ -1,0 +1,43 @@
+{
+  "$name": "Español",
+  "text_current_lowercase": "actual",
+  "text_plugin_synopsis": "Complemento Paddle OCR PP-OCRv6 para OCR local",
+  "h3_languages_with_ascii": "Idiomas (Languages)",
+  "p_languages_all_supported_for_readme": "El README.md actual admite los siguientes idiomas",
+  "h3_introduction": "Introducción",
+  "p_introduction": "El complemento AutoJs6 Paddle OCR PP-OCRv6 proporciona deteccion y reconocimiento de texto local para AutoJs6 con Paddle OCR PP-OCRv6. Crea APK separados para los perfiles de modelo Tiny, Small y Medium.",
+  "h3_functions": "Funciones",
+  "features": [
+    "Proporciona el servicio de complemento OCR compartido con los ID de complemento `{{ plugin_ids }}`, motor `{{ plugin_engine }}` y variante `{{ plugin_variant }}`.",
+    "Expone la interfaz OCR AIDL mediante `{{ plugin_action }}` y funciona con el flujo de descubrimiento de complementos OCR del host AutoJs6.",
+    "Admite `recognizeText` para listas de lineas de texto y `detect` para texto, confianza, limites de linea, coordenadas cuadrilateras y metadatos de tiempo.",
+    "Admite entrada de imagen codificada y entrada de bufer de imagen `ARGB_8888` sin procesar.",
+    "`small` es el valor predeterminado recomendado para Android, `tiny` apunta a dispositivos de gama baja y OCR local mas rapido, y `medium` apunta a OCR de mayor precision.",
+    "Proporciona `scripts/prepare_ppocrv6_assets.py` para preparar activos de modelo PP-OCRv6 y colocar cada perfil en su propio directorio de assets de flavor.",
+    "Los metadatos del complemento, las instrucciones de uso, el README y el CHANGELOG estan localizados en español, frances, ruso, arabe, japones, coreano, ingles, chino simplificado, chino tradicional de Hong Kong y chino tradicional de Taiwan.",
+    "Basado en `com.microsoft.onnxruntime:onnxruntime-android` y OpenCV 4.8.0."
+  ],
+  "h3_model_profiles": "Perfiles de Modelo",
+  "profile_lines": [
+    "tiny: dispositivos de gama baja y OCR local mas rapido",
+    "small: valor predeterminado recomendado para Android",
+    "medium: OCR de alta precision con activos de modelo mas grandes"
+  ],
+  "p_model_profiles": "Cada perfil se empaqueta como un product flavor independiente para que el APK solo contenga los activos del modelo seleccionado",
+  "h3_plugin_interface": "Interfaz del Complemento",
+  "p_plugin_interface": "El host puede descubrir e invocar el complemento con la siguiente identidad",
+  "p_result_shape": "`recognizeText` devuelve una lista de cadenas; `detect` devuelve objetos de resultado OCR que contienen `text`, `confidence`, `bounds`, `quad`, `detectionTimeMs`, `recognitionTimeMs`, `totalTimeMs` y `coldLoadTimeMs`.",
+  "h3_model_assets": "Activos de Modelo",
+  "p_model_assets": "El script descarga activos ONNX oficiales de PP-OCRv6, o convierte archivos de modelo estatico Paddle locales cuando se proporciona `--source-dir`. De forma predeterminada, los activos se escriben en `app/src/<profile>/assets`",
+  "h3_release_history": "Historial de Versiones",
+  "h5_for_more_release_history": "Para ver mas historial de versiones",
+  "h3_build": "Compilación",
+  "text_release_build": "Compilación Release",
+  "p_build_params": "Los parametros de compilacion provienen de `version.properties`; el SDK minimo de la app es 26 y el SDK de destino es 36",
+  "h3_resource_layout": "Estructura de Recursos",
+  "p_resource_layout": "`strings.xml` contiene descripciones localizadas del complemento; `plugin_instruction.md` contiene las instrucciones de uso que muestra el host. README y CHANGELOG se generan desde fuentes JSON mediante `.python/generate_markdown.py`",
+  "h3_links": "Enlaces",
+  "text_link_autojs6_docs": "Documentación de AutoJs6",
+  "text_link_paddleocr_official": "Proyecto oficial PaddleOCR",
+  "text_link_paddlex_official": "Proyecto oficial PaddleX"
+}
