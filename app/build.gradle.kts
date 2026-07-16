@@ -7,7 +7,6 @@ plugins {
     id("org.autojs.build.signs")
     id("org.autojs.build.jvm-convention")
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
 }
 
 val globalApplicationId = "io.github.supermonster003.autojs6.plugin.paddleocr.v6"
