@@ -1,6 +1,12 @@
+******
+
+### リリース履歴
+
+******
+
 # v1.0.0
 
-###### 2026/07/17
+###### 2026/09/01
 
 * `機能` プラグイン ID `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small`, `paddle-ocr-pp-ocrv6-medium`, エンジン `paddle-ocr`, バリアント `v6` の Paddle OCR PP-OCRv6 プラグインサービスを追加
 * `機能` 共有 OCR AIDL action `org.autojs.plugin.PADDLE_OCR` によるホスト側の検出と呼び出しを追加
@@ -12,3 +18,5 @@
 * `機能` README と CHANGELOG 用の JSON ソースファイルおよび `.python/generate_markdown.py` 生成フローを追加
 * `機能` `arm64-v8a`, `armeabi-v7a`, `universal` APK 向けの ABI 分割 APK ビルドを追加
 * `機能` Release APK ファイル名にバージョン, flavor, ABI バリアント, release アーカイブタスクによる任意の CRC32 ダイジェストを含めるように変更
+* `修正` 一部のシステムでインストール後にプラグインセンターからプラグインを有効化できない問題
+* `改善` README のレイアウトと Gradle プラットフォームのバージョン管理方式を統一

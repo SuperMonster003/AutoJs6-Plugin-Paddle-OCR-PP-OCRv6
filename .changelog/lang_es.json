@@ -6,7 +6,7 @@
   "changelog_label_dependency": "Dependencia",
   "$data": {
     "v1.0.0": {
-      "released_date": "2026/07/17",
+      "released_date": "2026/09/01",
       "feature": [
         "Se agrego el servicio de complemento Paddle OCR PP-OCRv6 con ID de complemento `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small` y `paddle-ocr-pp-ocrv6-medium`, motor `paddle-ocr` y variante `v6`",
         "Se agrego descubrimiento e invocacion desde el host mediante la accion OCR AIDL compartida `org.autojs.plugin.PADDLE_OCR`",
@@ -18,6 +18,12 @@
         "Se agregaron fuentes JSON y el flujo de generacion `.python/generate_markdown.py` para README y CHANGELOG",
         "Se agregaron compilaciones APK divididas por ABI para `arm64-v8a`, `armeabi-v7a` y un APK `universal`",
         "Los nombres de los APK de release incluyen version, flavor, variante ABI y resumen CRC32 opcional desde la tarea de archivo de release"
+      ],
+      "fix": [
+        "El complemento no se podía activar desde el centro de complementos después de instalarlo en algunos sistemas"
+      ],
+      "improvement": [
+        "Unificar el diseño del README y la gestión de versiones de la plataforma Gradle"
       ]
     }
   }

@@ -1,6 +1,12 @@
+******
+
+### سجل الإصدارات
+
+******
+
 # v1.0.0
 
-###### 2026/07/17
+###### 2026/09/01
 
 * `ميزة` تمت إضافة خدمة مكون Paddle OCR PP-OCRv6 الإضافي بمعرفات `paddle-ocr-pp-ocrv6-tiny` و `paddle-ocr-pp-ocrv6-small` و `paddle-ocr-pp-ocrv6-medium`, والمحرك `paddle-ocr`, والمتغير `v6`
 * `ميزة` تمت إضافة اكتشاف المضيف والاستدعاء عبر إجراء OCR AIDL المشترك `org.autojs.plugin.PADDLE_OCR`
@@ -12,3 +18,5 @@
 * `ميزة` تمت إضافة ملفات مصدر JSON ومسار إنشاء `.python/generate_markdown.py` لملفات README و CHANGELOG
 * `ميزة` تمت إضافة بناء APK مقسم حسب ABI لـ `arm64-v8a` و `armeabi-v7a` وحزمة APK `universal`
 * `ميزة` تتضمن أسماء ملفات APK في release الإصدار و flavor ومتغير ABI وملخص CRC32 اختياري من مهمة أرشفة release
+* `إصلاح` تعذر تنشيط المكون الإضافي من مركز المكونات الإضافية بعد التثبيت على بعض الأنظمة
+* `تحسين` توحيد تخطيط README وطريقة إدارة إصدارات منصة Gradle

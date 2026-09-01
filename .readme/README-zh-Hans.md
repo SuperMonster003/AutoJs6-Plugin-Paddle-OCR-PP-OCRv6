@@ -13,10 +13,6 @@
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6?label=Release"/></a>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/issues"><img alt="GitHub closed issues" src="https://img.shields.io/github/issues/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6?color=A24232&label=Issues"/></a>
-    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/commit/c0ce9cff35143c09cb1811c487a306e5b4ef2399"><img alt="Created" src="https://img.shields.io/date/1783150107?color=2e7d32&label=Created"/></a>
-    <br>
-    <a href="https://developer.android.com/studio/archive"><img alt="Android Studio" src="https://img.shields.io/badge/Android%20Studio-2023.3+-B64FC8"/></a>
-    <a href="https://www.jetbrains.com/idea/download/other.html"><img alt="IntelliJ IDEA" src="https://img.shields.io/badge/IntelliJ%20IDEA-2023.3+-EE4677"/></a>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6?color=534BAE&label=License"/></a>
   </p>
 </div>
@@ -116,7 +112,7 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 
 # v1.0.0
 
-###### 2026/07/17
+###### 2026/09/01
 
 * `新增` Paddle OCR PP-OCRv6 插件服务, 插件 ID 包括 `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small` 和 `paddle-ocr-pp-ocrv6-medium`, 引擎为 `paddle-ocr`, 变体为 `v6`
 * `新增` 支持通过共享 OCR AIDL action `org.autojs.plugin.PADDLE_OCR` 发现并调用插件
@@ -128,10 +124,12 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 * `新增` README 和 CHANGELOG 的 JSON 源文件及 `.python/generate_markdown.py` 生成流程
 * `新增` 按 ABI 构建 APK, 包括 `arm64-v8a`/`armeabi-v7a` 以及 `universal` 通用包
 * `新增` 发布 APK 文件名包含版本号, flavor, ABI 变体, 发布归档任务可追加 CRC32 摘要
+* `修复` 部分系统安装后无法通过插件中心激活的问题
+* `优化` 统一 README 版式与 Gradle 平台版本管理方式
 
 ##### 更多发行历史可参阅
 
-* [CHANGELOG-zh-Hans.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/.changelog/CHANGELOG-zh-Hans.md)
+* [CHANGELOG-zh-Hans.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hans.md)
 
 ******
 

@@ -1,6 +1,12 @@
+******
+
+### 發行歷史
+
+******
+
 # v1.0.0
 
-###### 2026/07/17
+###### 2026/09/01
 
 * `新增` Paddle OCR PP-OCRv6 外掛服務, 外掛 ID 包括 `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small` 和 `paddle-ocr-pp-ocrv6-medium`, 引擎為 `paddle-ocr`, 變體為 `v6`
 * `新增` 支援透過共享 OCR AIDL action `org.autojs.plugin.PADDLE_OCR` 探索並呼叫外掛
@@ -12,3 +18,5 @@
 * `新增` README 和 CHANGELOG 的 JSON 來源檔及 `.python/generate_markdown.py` 產生流程
 * `新增` 依 ABI 建置 APK, 包括 `arm64-v8a`/`armeabi-v7a` 以及 `universal` 通用套件
 * `新增` 發佈 APK 檔名包含版本號, flavor, ABI 變體, 發佈歸檔任務可追加 CRC32 摘要
+* `修復` 部分系統安裝後無法透過外掛中心啟用的問題
+* `優化` 統一 README 版式與 Gradle 平台版本管理方式

@@ -1,6 +1,12 @@
+******
+
+### 发行历史
+
+******
+
 # v1.0.0
 
-###### 2026/07/17
+###### 2026/09/01
 
 * `新增` Paddle OCR PP-OCRv6 插件服务, 插件 ID 包括 `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small` 和 `paddle-ocr-pp-ocrv6-medium`, 引擎为 `paddle-ocr`, 变体为 `v6`
 * `新增` 支持通过共享 OCR AIDL action `org.autojs.plugin.PADDLE_OCR` 发现并调用插件
@@ -12,3 +18,5 @@
 * `新增` README 和 CHANGELOG 的 JSON 源文件及 `.python/generate_markdown.py` 生成流程
 * `新增` 按 ABI 构建 APK, 包括 `arm64-v8a`/`armeabi-v7a` 以及 `universal` 通用包
 * `新增` 发布 APK 文件名包含版本号, flavor, ABI 变体, 发布归档任务可追加 CRC32 摘要
+* `修复` 部分系统安装后无法通过插件中心激活的问题
+* `优化` 统一 README 版式与 Gradle 平台版本管理方式

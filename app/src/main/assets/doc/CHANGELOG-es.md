@@ -1,6 +1,12 @@
+******
+
+### Historial de Versiones
+
+******
+
 # v1.0.0
 
-###### 2026/07/17
+###### 2026/09/01
 
 * `Función` Se agrego el servicio de complemento Paddle OCR PP-OCRv6 con ID de complemento `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small` y `paddle-ocr-pp-ocrv6-medium`, motor `paddle-ocr` y variante `v6`
 * `Función` Se agrego descubrimiento e invocacion desde el host mediante la accion OCR AIDL compartida `org.autojs.plugin.PADDLE_OCR`
@@ -12,3 +18,5 @@
 * `Función` Se agregaron fuentes JSON y el flujo de generacion `.python/generate_markdown.py` para README y CHANGELOG
 * `Función` Se agregaron compilaciones APK divididas por ABI para `arm64-v8a`, `armeabi-v7a` y un APK `universal`
 * `Función` Los nombres de los APK de release incluyen version, flavor, variante ABI y resumen CRC32 opcional desde la tarea de archivo de release
+* `Corrección` El complemento no se podía activar desde el centro de complementos después de instalarlo en algunos sistemas
+* `Mejora` Unificar el diseño del README y la gestión de versiones de la plataforma Gradle

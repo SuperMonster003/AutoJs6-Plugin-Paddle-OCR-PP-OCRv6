@@ -6,7 +6,7 @@
   "changelog_label_dependency": "Dependency",
   "$data": {
     "v1.0.0": {
-      "released_date": "2026/07/17",
+      "released_date": "2026/09/01",
       "feature": [
         "Added the Paddle OCR PP-OCRv6 plugin service with plugin IDs `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small`, and `paddle-ocr-pp-ocrv6-medium`, engine `paddle-ocr`, and variant `v6`",
         "Added host discovery and invocation through the shared OCR AIDL action `org.autojs.plugin.PADDLE_OCR`",
@@ -18,6 +18,12 @@
         "Added JSON source files and `.python/generate_markdown.py` generation flow for README and CHANGELOG files",
         "Added ABI split APK builds for `arm64-v8a`, `armeabi-v7a`, and a `universal` APK",
         "Release APK filenames include the version, flavor, ABI variant, and optional CRC32 digest from the release archive task"
+      ],
+      "fix": [
+        "The plugin could not be activated from Plugin Center after installation on some systems"
+      ],
+      "improvement": [
+        "Standardize the README layout and Gradle platform version management"
       ]
     }
   }

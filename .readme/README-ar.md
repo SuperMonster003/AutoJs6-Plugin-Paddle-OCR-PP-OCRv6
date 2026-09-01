@@ -13,10 +13,6 @@
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6?label=Release"/></a>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/issues"><img alt="GitHub closed issues" src="https://img.shields.io/github/issues/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6?color=A24232&label=Issues"/></a>
-    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/commit/c0ce9cff35143c09cb1811c487a306e5b4ef2399"><img alt="Created" src="https://img.shields.io/date/1783150107?color=2e7d32&label=Created"/></a>
-    <br>
-    <a href="https://developer.android.com/studio/archive"><img alt="Android Studio" src="https://img.shields.io/badge/Android%20Studio-2023.3+-B64FC8"/></a>
-    <a href="https://www.jetbrains.com/idea/download/other.html"><img alt="IntelliJ IDEA" src="https://img.shields.io/badge/IntelliJ%20IDEA-2023.3+-EE4677"/></a>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6?color=534BAE&label=License"/></a>
   </p>
 </div>
@@ -116,7 +112,7 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 
 # v1.0.0
 
-###### 2026/07/17
+###### 2026/09/01
 
 * `ميزة` تمت إضافة خدمة مكون Paddle OCR PP-OCRv6 الإضافي بمعرفات `paddle-ocr-pp-ocrv6-tiny` و `paddle-ocr-pp-ocrv6-small` و `paddle-ocr-pp-ocrv6-medium`, والمحرك `paddle-ocr`, والمتغير `v6`
 * `ميزة` تمت إضافة اكتشاف المضيف والاستدعاء عبر إجراء OCR AIDL المشترك `org.autojs.plugin.PADDLE_OCR`
@@ -128,10 +124,12 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 * `ميزة` تمت إضافة ملفات مصدر JSON ومسار إنشاء `.python/generate_markdown.py` لملفات README و CHANGELOG
 * `ميزة` تمت إضافة بناء APK مقسم حسب ABI لـ `arm64-v8a` و `armeabi-v7a` وحزمة APK `universal`
 * `ميزة` تتضمن أسماء ملفات APK في release الإصدار و flavor ومتغير ABI وملخص CRC32 اختياري من مهمة أرشفة release
+* `إصلاح` تعذر تنشيط المكون الإضافي من مركز المكونات الإضافية بعد التثبيت على بعض الأنظمة
+* `تحسين` توحيد تخطيط README وطريقة إدارة إصدارات منصة Gradle
 
 ##### لمزيد من سجل الإصدارات
 
-* [CHANGELOG-ar.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/.changelog/CHANGELOG-ar.md)
+* [CHANGELOG-ar.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/app/src/main/assets/doc/CHANGELOG-ar.md)
 
 ******
 

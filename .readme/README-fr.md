@@ -13,10 +13,6 @@
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/releases"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6?label=Release"/></a>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/issues"><img alt="GitHub closed issues" src="https://img.shields.io/github/issues/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6?color=A24232&label=Issues"/></a>
-    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/commit/c0ce9cff35143c09cb1811c487a306e5b4ef2399"><img alt="Created" src="https://img.shields.io/date/1783150107?color=2e7d32&label=Created"/></a>
-    <br>
-    <a href="https://developer.android.com/studio/archive"><img alt="Android Studio" src="https://img.shields.io/badge/Android%20Studio-2023.3+-B64FC8"/></a>
-    <a href="https://www.jetbrains.com/idea/download/other.html"><img alt="IntelliJ IDEA" src="https://img.shields.io/badge/IntelliJ%20IDEA-2023.3+-EE4677"/></a>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6?color=534BAE&label=License"/></a>
   </p>
 </div>
@@ -116,7 +112,7 @@ Le script telecharge les assets ONNX officiels de PP-OCRv6, ou convertit des arc
 
 # v1.0.0
 
-###### 2026/07/17
+###### 2026/09/01
 
 * `Fonctionnalité` Ajout du service de plugin Paddle OCR PP-OCRv6 avec les ID de plugin `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small` et `paddle-ocr-pp-ocrv6-medium`, le moteur `paddle-ocr` et la variante `v6`
 * `Fonctionnalité` Ajout de la decouverte et de l'appel par l'hote via l'action OCR AIDL partagee `org.autojs.plugin.PADDLE_OCR`
@@ -128,10 +124,12 @@ Le script telecharge les assets ONNX officiels de PP-OCRv6, ou convertit des arc
 * `Fonctionnalité` Ajout des sources JSON et du flux de generation `.python/generate_markdown.py` pour README et CHANGELOG
 * `Fonctionnalité` Ajout de builds APK divises par ABI pour `arm64-v8a`, `armeabi-v7a` et un APK `universal`
 * `Fonctionnalité` Les noms des APK de release incluent la version, le flavor, la variante ABI et le resume CRC32 optionnel de la tache d'archivage release
+* `Correctif` Le plugin ne pouvait pas être activé depuis le centre de plugins après son installation sur certains systèmes
+* `Amélioration` Uniformiser la mise en page du README et la gestion des versions de la plateforme Gradle
 
 ##### Pour plus d'historique des versions
 
-* [CHANGELOG-fr.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/.changelog/CHANGELOG-fr.md)
+* [CHANGELOG-fr.md](https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/app/src/main/assets/doc/CHANGELOG-fr.md)
 
 ******
 
