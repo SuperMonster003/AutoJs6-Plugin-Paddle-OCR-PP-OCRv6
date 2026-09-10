@@ -9,7 +9,7 @@ pluginManagement {
         google()
     }
     plugins {
-        id("io.github.supermonster003.autojs6-platform-versions") version "1.6.0"
+        id("io.github.supermonster003.autojs6-platform-versions") version "1.7.4"
         id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
     }
 }
