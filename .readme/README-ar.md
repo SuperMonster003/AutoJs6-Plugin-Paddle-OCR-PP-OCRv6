@@ -110,6 +110,12 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 
 ******
 
+# v1.0.1
+
+###### 2026/09/11
+
+* `تحسين` التحقق أثناء البناء من محاذاة صفحات 16 KB للمكتبات الأصلية ذات 64 بت, مع فحص عقد manifest وتقارير JSON
+
 # v1.0.0
 
 ###### 2026/09/01
@@ -179,3 +185,6 @@ app/src/main/res/raw-*/plugin_instruction.md
 - وثائق AutoJs6: https://docs.autojs6.com
 - مشروع PaddleOCR الرسمي: https://github.com/PaddlePaddle/PaddleOCR
 - مشروع PaddleX الرسمي: https://github.com/PaddlePaddle/PaddleX
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/docs/16kb.md)

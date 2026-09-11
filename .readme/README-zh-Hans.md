@@ -110,6 +110,12 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 
 ******
 
+# v1.0.1
+
+###### 2026/09/11
+
+* `优化` 构建阶段校验 64 位原生库的 16 KB 页大小对齐, 检查 manifest 契约并输出 JSON 报告
+
 # v1.0.0
 
 ###### 2026/09/01
@@ -179,3 +185,6 @@ app/src/main/res/raw-*/plugin_instruction.md
 - AutoJs6 文档: https://docs.autojs6.com
 - PaddleOCR 官方项目: https://github.com/PaddlePaddle/PaddleOCR
 - PaddleX 官方项目: https://github.com/PaddlePaddle/PaddleX
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/docs/16kb.md)

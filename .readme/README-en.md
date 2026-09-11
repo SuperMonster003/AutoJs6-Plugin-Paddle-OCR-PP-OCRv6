@@ -110,6 +110,12 @@ The script downloads official PP-OCRv6 ONNX assets, or converts local Paddle sta
 
 ******
 
+# v1.0.1
+
+###### 2026/09/11
+
+* `Improvement` Build verification of 16 KB page alignment for 64-bit native libraries, including manifest contract checks and JSON reports
+
 # v1.0.0
 
 ###### 2026/09/01
@@ -179,3 +185,6 @@ app/src/main/res/raw-*/plugin_instruction.md
 - AutoJs6 documentation: https://docs.autojs6.com
 - PaddleOCR official project: https://github.com/PaddlePaddle/PaddleOCR
 - PaddleX official project: https://github.com/PaddlePaddle/PaddleX
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Paddle-OCR-PP-OCRv6/blob/master/docs/16kb.md)
