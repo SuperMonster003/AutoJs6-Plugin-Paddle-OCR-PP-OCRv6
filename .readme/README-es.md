@@ -118,6 +118,7 @@ El script descarga activos ONNX oficiales de PP-OCRv6, o convierte archivos de m
 
 * `Corrección` La versión y las ABI del centro de complementos coinciden con el APK instalado
 * `Corrección` La imagen codificada admite hasta 64 MiB mediante descriptores de archivo y tuberías
+* `Corrección` Las fechas de versión mantienen un formato uniforme en inglés
 * `Mejora` Validación de las versiones, firmas y variantes completas de los APK antes de crear los archivos de descarga
 * `Mejora` Las imágenes admiten hasta 16777216 píxeles; los búferes de imagen sin procesar se limitan a 64 MiB
 

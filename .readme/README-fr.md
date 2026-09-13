@@ -118,6 +118,7 @@ Le script telecharge les assets ONNX officiels de PP-OCRv6, ou convertit des arc
 
 * `Correctif` Les informations de version et d'ABI du centre des plugins correspondent à l'APK installé
 * `Correctif` Les images encodées sont limitées à 64 MiB avec prise en charge des fichiers et des tubes
+* `Correctif` Les dates de version utilisent un format anglais uniforme
 * `Amélioration` Validation des versions, signatures et variantes complètes des APK avant la création des fichiers à télécharger
 * `Amélioration` Les images peuvent contenir jusqu'à 16777216 pixels; les tampons bruts sont limités à 64 MiB
 
