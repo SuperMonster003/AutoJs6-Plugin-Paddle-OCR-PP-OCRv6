@@ -15,7 +15,9 @@
     "`small`은 Android 권장 기본값, `tiny`는 저사양 기기와 가장 빠른 로컬 OCR, `medium`은 더 높은 정확도의 OCR을 대상으로 합니다.",
     "`scripts/prepare_ppocrv6_assets.py`를 제공하여 PP-OCRv6 모델 자산을 준비하고 각 프로필을 자체 flavor assets 디렉터리에 배치합니다.",
     "플러그인 메타데이터, 사용 설명, README, CHANGELOG는 스페인어/프랑스어/러시아어/아랍어/일본어/한국어/영어/간체 중국어/홍콩 번체/대만 번체로 현지화되어 있습니다.",
-    "`com.microsoft.onnxruntime:onnxruntime-android`와 OpenCV 4.8.0을 기반으로 합니다."
+    "`com.microsoft.onnxruntime:onnxruntime-android`와 OpenCV 4.8.0을 기반으로 합니다.",
+    "이미지는 최대 16777216픽셀, 원시 이미지 버퍼는 최대 64 MiB까지 지원",
+    "인코딩된 이미지는 최대 64 MiB이며 파일 디스크립터와 파이프를 지원합니다"
   ],
   "h3_model_profiles": "모델 프로필",
   "profile_lines": [

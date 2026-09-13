@@ -100,26 +100,7 @@ class Versions @JvmOverloads constructor(
         }
     }
 
-    private fun updateProperties() {
-        val propsPath = bp.path
-        val props = Properties().apply {
-            FileInputStream(propsPath).use { load(it) }
-        }
-
-        if (isBuildGapEnough) {
-            val isBuildAppRelease = gradle.startParameter.taskNames.any {
-                it.contains(Regex("^(:?app:)?assemble(app|inrt)release", IGNORE_CASE))
-            }
-            if (!isBuildAppRelease) {
-                props["VERSION_BUILD"] = "${appVersionCode + 1}"
-                isBuildNumberAutoIncremented = true
-            }
-        }
-        props["BUILD_TIME"] = "${Date().time}"
-
-        FileOutputStream(propsPath).use { out ->
-            props.store(out, null)
-        }
-    }
+    // Git owns the build counter; verification must not rewrite version inputs.
+    private fun updateProperties() = Unit
 
 }

@@ -15,7 +15,9 @@
     "`small` is the recommended Android default, `tiny` targets low-end devices and fastest local OCR, and `medium` targets higher-accuracy OCR.",
     "Provides `scripts/prepare_ppocrv6_assets.py` to prepare PP-OCRv6 model assets and place each profile under its own flavor assets directory.",
     "Plugin metadata, usage instructions, README, and CHANGELOG are localized for Spanish, French, Russian, Arabic, Japanese, Korean, English, Simplified Chinese, Hong Kong Traditional Chinese, and Taiwan Traditional Chinese.",
-    "Built on `com.microsoft.onnxruntime:onnxruntime-android` and OpenCV 4.8.0."
+    "Built on `com.microsoft.onnxruntime:onnxruntime-android` and OpenCV 4.8.0.",
+    "Images may contain at most 16777216 pixels; raw image buffers are limited to 64 MiB",
+    "Encoded image input is limited to 64 MiB and supports file descriptors and pipes"
   ],
   "h3_model_profiles": "Model Profiles",
   "profile_lines": [

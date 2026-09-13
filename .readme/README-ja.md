@@ -58,6 +58,8 @@ AutoJs6 Paddle OCR PP-OCRv6 プラグインは, Paddle OCR PP-OCRv6 によるロ
 - `scripts/prepare_ppocrv6_assets.py` で PP-OCRv6 モデルアセットを準備し, 各プロファイルを個別の flavor assets ディレクトリに配置します.
 - プラグインメタデータ, 使用説明, README, CHANGELOG はスペイン語/フランス語/ロシア語/アラビア語/日本語/韓国語/英語/簡体字中国語/香港繁体字/台湾繁体字にローカライズされています.
 - `com.microsoft.onnxruntime:onnxruntime-android` と OpenCV 4.8.0 を基盤にしています.
+- 画像は最大 16777216 ピクセルまで, 生画像バッファーは 64 MiB まで対応
+- エンコード済み画像は 64 MiB まで対応し ファイル記述子とパイプを使用できます
 
 ******
 
@@ -110,6 +112,15 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 
 ******
 
+# v1.0.3
+
+###### 2026/09/13
+
+* `修正` プラグインセンターのバージョンと ABI 情報がインストール済み APK と一致
+* `修正` エンコード済み画像は 64 MiB まで対応し ファイル記述子とパイプを使用できます
+* `改善` ダウンロード用ファイルの作成前に, リリース APK のバージョン, 署名, バリアントの完全性を検証
+* `改善` 画像は最大 16777216 ピクセルまで, 生画像バッファーは 64 MiB まで対応
+
 # v1.0.2
 
 ###### 2026/09/12
@@ -124,23 +135,6 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 ###### 2026/09/11
 
 * `改善` 64 ビットのネイティブライブラリの 16 KB ページアラインメントをビルド時に検証, manifest 契約の検査と JSON レポートに対応
-
-# v1.0.0
-
-###### 2026/09/01
-
-* `機能` プラグイン ID `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small`, `paddle-ocr-pp-ocrv6-medium`, エンジン `paddle-ocr`, バリアント `v6` の Paddle OCR PP-OCRv6 プラグインサービスを追加
-* `機能` 共有 OCR AIDL action `org.autojs.plugin.PADDLE_OCR` によるホスト側の検出と呼び出しを追加
-* `機能` 認識テキスト, 信頼度, 行境界, 四点座標, 検出/認識時間を返す `recognizeText` と `detect` インターフェイスを追加
-* `機能` Tiny, Small, Medium のモデルプロファイルを追加し, `small` を Android 推奨デフォルトに設定
-* `機能` エンコード画像入力と raw `ARGB_8888` 画像バッファ入力に対応
-* `機能` 公式 ONNX ダウンロードと `--source-dir` によるローカル Paddle 静的モデル変換に対応した PP-OCRv6 モデルアセット準備スクリプトを追加
-* `機能` スペイン語/フランス語/ロシア語/アラビア語/日本語/韓国語/英語/簡体字中国語/香港繁体字/台湾繁体字のプラグインメタデータと使用説明を追加
-* `機能` README と CHANGELOG 用の JSON ソースファイルおよび `.python/generate_markdown.py` 生成フローを追加
-* `機能` `arm64-v8a`, `armeabi-v7a`, `universal` APK 向けの ABI 分割 APK ビルドを追加
-* `機能` Release APK ファイル名にバージョン, flavor, ABI バリアント, release アーカイブタスクによる任意の CRC32 ダイジェストを含めるように変更
-* `修正` 一部のシステムでインストール後にプラグインセンターからプラグインを有効化できない問題
-* `改善` README のレイアウトと Gradle プラットフォームのバージョン管理方式を統一
 
 ##### その他のリリース履歴
 

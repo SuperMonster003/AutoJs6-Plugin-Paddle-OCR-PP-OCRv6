@@ -58,6 +58,8 @@ The AutoJs6 Paddle OCR PP-OCRv6 Plugin provides local text detection and recogni
 - Provides `scripts/prepare_ppocrv6_assets.py` to prepare PP-OCRv6 model assets and place each profile under its own flavor assets directory.
 - Plugin metadata, usage instructions, README, and CHANGELOG are localized for Spanish, French, Russian, Arabic, Japanese, Korean, English, Simplified Chinese, Hong Kong Traditional Chinese, and Taiwan Traditional Chinese.
 - Built on `com.microsoft.onnxruntime:onnxruntime-android` and OpenCV 4.8.0.
+- Images may contain at most 16777216 pixels; raw image buffers are limited to 64 MiB
+- Encoded image input is limited to 64 MiB and supports file descriptors and pipes
 
 ******
 
@@ -110,6 +112,15 @@ The script downloads official PP-OCRv6 ONNX assets, or converts local Paddle sta
 
 ******
 
+# v1.0.3
+
+###### 2026/09/13
+
+* `Fix` Plugin center version and ABI information matches the installed plugin APK
+* `Fix` Encoded image input is limited to 64 MiB and supports file descriptors and pipes
+* `Improvement` Validate release APK versions, signing and the complete variant set before creating download artifacts
+* `Improvement` Images may contain at most 16777216 pixels; raw image buffers are limited to 64 MiB
+
 # v1.0.2
 
 ###### 2026/09/12
@@ -124,23 +135,6 @@ The script downloads official PP-OCRv6 ONNX assets, or converts local Paddle sta
 ###### 2026/09/11
 
 * `Improvement` Build verification of 16 KB page alignment for 64-bit native libraries, including manifest contract checks and JSON reports
-
-# v1.0.0
-
-###### 2026/09/01
-
-* `Feature` Added the Paddle OCR PP-OCRv6 plugin service with plugin IDs `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small`, and `paddle-ocr-pp-ocrv6-medium`, engine `paddle-ocr`, and variant `v6`
-* `Feature` Added host discovery and invocation through the shared OCR AIDL action `org.autojs.plugin.PADDLE_OCR`
-* `Feature` Added `recognizeText` and `detect` interfaces that return recognized text, confidence values, line bounds, quadrilateral coordinates, and detection/recognition timing
-* `Feature` Added Tiny, Small, and Medium model profiles, with `small` as the recommended Android default
-* `Feature` Added support for encoded image input and raw `ARGB_8888` image buffer input
-* `Feature` Added the PP-OCRv6 model asset preparation script, with official ONNX downloads and local Paddle static model conversion through `--source-dir`
-* `Feature` Added localized plugin metadata and usage instructions for Spanish, French, Russian, Arabic, Japanese, Korean, English, Simplified Chinese, Hong Kong Traditional Chinese, and Taiwan Traditional Chinese
-* `Feature` Added JSON source files and `.python/generate_markdown.py` generation flow for README and CHANGELOG files
-* `Feature` Added ABI split APK builds for `arm64-v8a`, `armeabi-v7a`, and a `universal` APK
-* `Feature` Release APK filenames include the version, flavor, ABI variant, and optional CRC32 digest from the release archive task
-* `Fix` The plugin could not be activated from Plugin Center after installation on some systems
-* `Improvement` Standardize the README layout and Gradle platform version management
 
 ##### For more release history
 

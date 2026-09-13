@@ -15,7 +15,9 @@
     "`small` es el valor predeterminado recomendado para Android, `tiny` apunta a dispositivos de gama baja y OCR local mas rapido, y `medium` apunta a OCR de mayor precision.",
     "Proporciona `scripts/prepare_ppocrv6_assets.py` para preparar activos de modelo PP-OCRv6 y colocar cada perfil en su propio directorio de assets de flavor.",
     "Los metadatos del complemento, las instrucciones de uso, el README y el CHANGELOG estan localizados en español, frances, ruso, arabe, japones, coreano, ingles, chino simplificado, chino tradicional de Hong Kong y chino tradicional de Taiwan.",
-    "Basado en `com.microsoft.onnxruntime:onnxruntime-android` y OpenCV 4.8.0."
+    "Basado en `com.microsoft.onnxruntime:onnxruntime-android` y OpenCV 4.8.0.",
+    "Las imágenes admiten hasta 16777216 píxeles; los búferes de imagen sin procesar se limitan a 64 MiB",
+    "La imagen codificada admite hasta 64 MiB mediante descriptores de archivo y tuberías"
   ],
   "h3_model_profiles": "Perfiles de Modelo",
   "profile_lines": [

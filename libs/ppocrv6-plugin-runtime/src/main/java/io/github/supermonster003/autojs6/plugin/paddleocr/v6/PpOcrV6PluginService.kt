@@ -48,7 +48,7 @@ class PpOcrV6PluginService : Service() {
                 versionName = runtimeConfig.versionName
                 versionCode = runtimeConfig.versionCode
                 versionDate = runtimeConfig.versionDate
-                supportedAbis = SUPPORTED_ABIS
+                org.autojs.plugin.runtime.InstalledPackageIdentity.apply(this@PpOcrV6PluginService, this)
                 capabilities = Bundle().apply {
                     putInt(PluginCapabilityKeys.REQUIRES_HOST_VERSION, 3835)
                     putBoolean(PaddleOcrPluginCapabilityKeys.SUPPORTS_RAW_IMAGE, true)

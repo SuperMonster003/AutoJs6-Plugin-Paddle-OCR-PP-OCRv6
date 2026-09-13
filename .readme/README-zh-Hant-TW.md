@@ -58,6 +58,8 @@ AutoJs6 Paddle OCR PP-OCRv6 外掛為 AutoJs6 提供基於 Paddle OCR PP-OCRv6 �
 - 提供 `scripts/prepare_ppocrv6_assets.py` 準備 PP-OCRv6 模型資產, 並按 flavor 放入獨立 assets 目錄.
 - 外掛資訊, 使用說明, README 與 CHANGELOG 均支援西班牙文/法文/俄文/阿拉伯文/日文/韓文/英文/簡體中文/香港繁體/台灣繁體.
 - 基於 `com.microsoft.onnxruntime:onnxruntime-android` 和 OpenCV 4.8.0.
+- 影像最多包含 16777216 個像素, 原始影像緩衝區上限為 64 MiB
+- 編碼影像最大為 64 MiB, 支援檔案描述元和管線傳輸
 
 ******
 
@@ -110,6 +112,15 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 
 ******
 
+# v1.0.3
+
+###### 2026/09/13
+
+* `修復` 外掛中心顯示的版本與 ABI 資訊符合實際安裝的 APK
+* `修復` 編碼影像最大為 64 MiB, 支援檔案描述元和管線傳輸
+* `優化` 發行下載檔案產生前驗證 APK 版本, 簽章與完整變體集合
+* `優化` 影像最多包含 16777216 個像素, 原始影像緩衝區上限為 64 MiB
+
 # v1.0.2
 
 ###### 2026/09/12
@@ -124,23 +135,6 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 ###### 2026/09/11
 
 * `優化` 建置階段校驗 64 位原生函式庫的 16 KB 頁面大小對齊, 檢查 manifest 契約並輸出 JSON 報告
-
-# v1.0.0
-
-###### 2026/09/01
-
-* `新增` Paddle OCR PP-OCRv6 外掛服務, 外掛 ID 包括 `paddle-ocr-pp-ocrv6-tiny`, `paddle-ocr-pp-ocrv6-small` 和 `paddle-ocr-pp-ocrv6-medium`, 引擎為 `paddle-ocr`, 變體為 `v6`
-* `新增` 支援透過共享 OCR AIDL action `org.autojs.plugin.PADDLE_OCR` 探索並呼叫外掛
-* `新增` 提供 `recognizeText` 和 `detect` 介面, 回傳辨識文字, 信賴度, 文字行邊界框, 四點座標和偵測/辨識耗時
-* `新增` 提供 Tiny, Small, Medium 三個模型檔位, 其中 `small` 為 Android 建議預設檔
-* `新增` 支援編碼圖片輸入和 `ARGB_8888` 原始圖片緩衝區輸入
-* `新增` 提供 PP-OCRv6 模型資產準備腳本, 支援下載官方 ONNX 模型, 也支援透過 `--source-dir` 轉換本機 Paddle 靜態模型
-* `新增` 外掛資訊和使用說明的多語言資源: 西班牙文/法文/俄文/阿拉伯文/日文/韓文/英文/簡體中文/香港繁體/台灣繁體
-* `新增` README 和 CHANGELOG 的 JSON 來源檔及 `.python/generate_markdown.py` 產生流程
-* `新增` 依 ABI 建置 APK, 包括 `arm64-v8a`/`armeabi-v7a` 以及 `universal` 通用套件
-* `新增` 發佈 APK 檔名包含版本號, flavor, ABI 變體, 發佈歸檔任務可追加 CRC32 摘要
-* `修復` 部分系統安裝後無法透過外掛中心啟用的問題
-* `優化` 統一 README 版式與 Gradle 平台版本管理方式
 
 ##### 更多發行歷史可參閱
 

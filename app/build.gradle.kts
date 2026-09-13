@@ -10,7 +10,6 @@ plugins {
     id("org.autojs.build.signs")
     id("org.autojs.build.jvm-convention")
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
 }
 
 val globalApplicationId = "io.github.supermonster003.autojs6.plugin.paddleocr.v6"
@@ -26,7 +25,7 @@ android {
     defaultConfig {
         applicationId = globalApplicationId
 
-        minSdk = 26
+        minSdk = versions.sdkVersionMin
         targetSdk = versions.sdkVersionTarget
 
         versionCode = versions.appVersionCode
@@ -193,6 +192,9 @@ androidComponents {
 }
 
 dependencies {
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.3.0")
+    androidTestImplementation("androidx.test:runner:1.7.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.21")
     implementation("org.jetbrains.kotlin:kotlin-parcelize-runtime:2.2.21")
     implementation("org.jetbrains:annotations:26.0.2")
@@ -212,31 +214,11 @@ tasks {
         options.encoding = "UTF-8"
     }
 
-    register<Sync>("appendDigestToReleasedFiles") {
-        val ext = utils.FILE_EXTENSION_APK
-        val src = fileTree(projectDir) {
-            include(
-                "$buildTypeRelease/*.$ext",
-                "*/$buildTypeRelease/*.$ext",
-            )
-        }
-        val dst = file("${buildTypeRelease}s")
 
-        from(src)
-        into(dst)
-        includeEmptyDirs = false
-        duplicatesStrategy = DuplicatesStrategy.FAIL
-
-        eachFile {
-            val digest = utils.digestCRC32(file)
-            val digestedName = "${name.removeSuffix(".$ext")}-$digest.$ext"
-            relativePath = RelativePath(true, digestedName)
-        }
-
-        doLast { println("Destination: $dst") }
-    }
 }
 
 extra {
     versions.handleIfNeeded(project, listOf(buildTypeDebug, buildTypeRelease))
 }
+
+apply(from = rootProject.file("gradle/release-archive.gradle"))

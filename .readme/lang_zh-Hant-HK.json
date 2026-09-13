@@ -15,7 +15,9 @@
     "`small` 為 Android 推薦默認檔, `tiny` 面向低端設備和最快本地 OCR, `medium` 面向高精度 OCR.",
     "提供 `scripts/prepare_ppocrv6_assets.py` 準備 PP-OCRv6 模型資產, 並按 flavor 放入獨立 assets 目錄.",
     "插件資訊, 使用說明, README 與 CHANGELOG 均支援西班牙語/法語/俄語/阿拉伯語/日語/韓語/英語/簡體中文/香港繁體/台灣繁體.",
-    "基於 `com.microsoft.onnxruntime:onnxruntime-android` 和 OpenCV 4.8.0."
+    "基於 `com.microsoft.onnxruntime:onnxruntime-android` 和 OpenCV 4.8.0.",
+    "影像最多包含 16777216 個像素, 原始影像緩衝區上限為 64 MiB",
+    "編碼圖像最大為 64 MiB, 支援檔案描述符和管道傳輸"
   ],
   "h3_model_profiles": "模型檔位",
   "profile_lines": [
