@@ -121,6 +121,7 @@ Le script telecharge les assets ONNX officiels de PP-OCRv6, ou convertit des arc
 * `Correctif` Les dates de version utilisent un format anglais uniforme
 * `Amélioration` Validation des versions, signatures et variantes complètes des APK avant la création des fichiers à télécharger
 * `Amélioration` Les images peuvent contenir jusqu'à 16777216 pixels; les tampons bruts sont limités à 64 MiB
+* `Amélioration` Étendre les ABI natives et les métadonnées du plugin à arm64-v8a, armeabi-v7a, x86 et x86_64, avec des APK universels et par ABI cohérents
 
 # v1.0.2
 
