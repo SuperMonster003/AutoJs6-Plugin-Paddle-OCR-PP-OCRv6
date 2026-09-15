@@ -112,6 +112,12 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 
 ******
 
+# v1.0.4
+
+###### 2026/09/15
+
+* `개선` compileSdk 와 targetSdk 를 37 (Android 17) 로 올리며, 플러그인 동작은 새 대상 버전의 영향을 받지 않음
+
 # v1.0.3
 
 ###### 2026/09/13
@@ -131,12 +137,6 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 * `수정` 큰 인식 모델을 로드할 때 `OutOfMemoryError`로 인해 빈 결과가 조용히 반환되던 문제 수정: 모델 자산을 앱 전용 저장소에 한 번만 복사하고 Java 힙으로 읽는 대신 ONNX Runtime이 메모리 매핑하도록 변경
 * `수정` 일부 Gradle/AGP 조합에서 Kotlin 소스가 컴파일되지 않거나 `WakeActivity` 중복 정의로 빌드가 실패하는 문제
 * `개선` OpenCV 4.8.0 네이티브 라이브러리를 NDK r28c (Clang 19.0.1) 재빌드 버전으로 동기화 (donor: AutoJs6-Plugin-OpenCV); 4개 ABI의 `libopencv_java4.so`는 16 KB `PT_LOAD` 정렬을 유지하며 provenance 매니페스트를 포함
-
-# v1.0.1
-
-###### 2026/09/11
-
-* `개선` 64비트 네이티브 라이브러리의 16 KB 페이지 정렬을 빌드 시 검증, manifest 계약 검사 및 JSON 보고서 지원
 
 ##### 더 많은 릴리스 기록
 

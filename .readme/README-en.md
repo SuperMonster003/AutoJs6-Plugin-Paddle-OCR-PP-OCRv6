@@ -112,6 +112,12 @@ The script downloads official PP-OCRv6 ONNX assets, or converts local Paddle sta
 
 ******
 
+# v1.0.4
+
+###### 2026/09/15
+
+* `Improvement` Raise compileSdk and targetSdk to 37 (Android 17); the plugin's behavior does not depend on the new target
+
 # v1.0.3
 
 ###### 2026/09/13
@@ -131,12 +137,6 @@ The script downloads official PP-OCRv6 ONNX assets, or converts local Paddle sta
 * `Fix` Fixed large recognition models silently returning empty results after an `OutOfMemoryError`: model assets are now materialized once into app-private storage and memory-mapped by ONNX Runtime instead of being read into the Java heap
 * `Fix` Kotlin sources not compiled and duplicate `WakeActivity` definitions could cause build failures with some Gradle/AGP combinations
 * `Improvement` Synced the OpenCV 4.8.0 native library to the NDK r28c (Clang 19.0.1) rebuild (donor: AutoJs6-Plugin-OpenCV); `libopencv_java4.so` for all 4 ABIs keeps 16 KB `PT_LOAD` alignment and ships with a provenance manifest
-
-# v1.0.1
-
-###### 2026/09/11
-
-* `Improvement` Build verification of 16 KB page alignment for 64-bit native libraries, including manifest contract checks and JSON reports
 
 ##### For more release history
 

@@ -112,6 +112,12 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 
 ******
 
+# v1.0.4
+
+###### 2026/09/15
+
+* `優化` 將 compileSdk 與 targetSdk 提升到 37 (Android 17), 插件行為不受新目標版本影響
+
 # v1.0.3
 
 ###### 2026/09/13
@@ -131,12 +137,6 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 * `修復` 修復載入體積較大的識別模型時因 `OutOfMemoryError` 而靜默返回空結果的問題: 模型資源現在只會複製到應用私有目錄一次, 並由 ONNX Runtime 以記憶體映射方式建立會話, 不再整體讀入 Java 堆
 * `修復` 部分 Gradle/AGP 組合下 Kotlin 原始碼未參與編譯, 以及重複定義 `WakeActivity` 導致的建置失敗
 * `優化` 同步 OpenCV 4.8.0 原生庫至 NDK r28c (Clang 19.0.1) 重編版本 (donor: AutoJs6-Plugin-OpenCV), 4 個 ABI 的 `libopencv_java4.so` 保持 16 KB `PT_LOAD` 對齊並附帶 provenance 清單
-
-# v1.0.1
-
-###### 2026/09/11
-
-* `優化` 建置階段校驗 64 位原生程式庫的 16 KB 頁面大小對齊, 檢查 manifest 契約並輸出 JSON 報告
 
 ##### 更多發行歷史可參閱
 

@@ -112,6 +112,12 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 
 ******
 
+# v1.0.4
+
+###### 2026/09/15
+
+* `改善` compileSdk と targetSdk を 37 (Android 17) に引き上げ, プラグインの動作は新しいターゲットの影響を受けない
+
 # v1.0.3
 
 ###### 2026/09/13
@@ -131,12 +137,6 @@ python scripts/prepare_ppocrv6_assets.py --profile medium
 * `修正` 大きな認識モデルの読み込み時に `OutOfMemoryError` が発生して空の結果が返される問題を修正: モデルアセットをアプリ専用ストレージへ一度だけ展開し, Java ヒープに読み込む代わりに ONNX Runtime がメモリマップするように
 * `修正` 一部の Gradle/AGP の組み合わせで Kotlin ソースがコンパイルされず, `WakeActivity` の重複定義によりビルドが失敗する問題
 * `改善` OpenCV 4.8.0 ネイティブライブラリを NDK r28c (Clang 19.0.1) 再ビルド版に同期 (donor: AutoJs6-Plugin-OpenCV); 4 つの ABI の `libopencv_java4.so` は 16 KB `PT_LOAD` アラインメントを維持し provenance マニフェストを同梱
-
-# v1.0.1
-
-###### 2026/09/11
-
-* `改善` 64 ビットのネイティブライブラリの 16 KB ページアラインメントをビルド時に検証, manifest 契約の検査と JSON レポートに対応
 
 ##### その他のリリース履歴
 
